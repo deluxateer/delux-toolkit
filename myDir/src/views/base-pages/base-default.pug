@@ -1,0 +1,34 @@
+//- -----------------------------------------------------------------------------
+//- This file contains all markup related to the generic base page of the site/application.
+//- The intention is to construct a generic webpage with a navbar, hero, content, footer.
+//- Vertical page flow.
+//- -----------------------------------------------------------------------------
+
+include ../abstracts/data
+include ../abstracts/variables
+include ../abstracts/mixins
+include ../layout/head
+include ../layout/navbar
+
+block localVariables
+
+doctype html
+html(class=pageName lang='en')
+  +head(globalHeadProps, localHeadProps)
+  body
+    block content
+      block header
+        header
+          block headerContents
+            +navbar(navbarItems, activeNavbarItem)
+            button.back-to-top-btn.btn-primary.btn-large(style='display: none;')
+              i.fas.fa-arrow-circle-up
+      block main
+        main
+          block mainContent
+      block footer
+        include ../layout/footer
+    block scripts
+      if scriptPaths
+        each scriptPath in scriptPaths
+          script(src=scriptPath type='text/javascript')

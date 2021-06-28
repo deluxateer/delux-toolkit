@@ -1,0 +1,46 @@
+//- -----------------------------------------------------------------------------
+//- This file contains markup that is specific to the DeluxThreads page.
+//- -----------------------------------------------------------------------------
+
+extend base-pages/base-full-page
+
+include components/card
+
+block localVariables
+  -
+    //- page-specific head configurations
+    const localHeadProps = {
+      title: 'Delux Toolkit by Deluxateer',
+      description: 'Landing page of the delux toolkit.',
+      keywords: 'webdev, pug, scss, sass, js, deluxateer',
+      //- paths of the stylesheets to use for this page
+      localStylesheetPaths: [{
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.8.2/css/all.css',
+        integrity: 'sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay',
+        crossorigin: 'anonymous',
+      }],
+    };
+  -
+    //- paths of javascript files to use for this page
+    const scriptPaths = [
+      //- 'js/vendor.js',
+    ];
+  
+    //- class to put on body tag for custom styling
+  - const pageName = 'home';
+    //- used to indicate this page is selected on the navbar item
+  - const activeNavbarItem = ''
+  -
+    const cardContent = {
+      iconClasses: 'fas fa-check-circle fa-5x',
+      title: "You're good to go!",
+      content: [
+        'Your toolkit is working just fine now.',
+        'Enjoy!',
+      ],
+    }
+
+//- ---------------- MARKUP FOR PAGE ----------------
+block content
+  +card(cardContent)

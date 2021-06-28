@@ -1,0 +1,28 @@
+//- -----------------------------------------------------------------------------
+//- This file contains all markup related to the generic full-page webpage of the site/application.
+//- No page flow.
+//- -----------------------------------------------------------------------------
+
+include ../abstracts/data
+include ../abstracts/variables
+include ../abstracts/mixins
+include ../layout/head
+
+block localVariables
+
+doctype html
+html.full-page(class=pageName lang='en')
+  +head(globalHeadProps, localHeadProps)
+  body
+    block content
+      block header
+        header
+          block headerContent
+      block main
+        main
+          block mainContent
+      block footer
+    block scripts
+      if scriptPaths
+        each scriptPath in scriptPaths
+          script(src=scriptPath type='text/javascript')

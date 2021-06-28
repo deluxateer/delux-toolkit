@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the about page.
+// -----------------------------------------------------------------------------
+
+.home body {
+  @include flex-center-children;
+  background-color: tint($primary-color, 90);
+  padding: 20px;
+
+  p { margin-bottom: 0.5rem; }
+}

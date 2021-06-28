@@ -1,0 +1,8 @@
+# npm modules and related files
+node_modules/
+
+# static generated assets
+dist/
+
+# debug
+reports/

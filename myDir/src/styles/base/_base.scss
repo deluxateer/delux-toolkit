@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+html { scroll-behavior: smooth; }
+
+body { color: $text-color; }
+
+code { font-family: $code-font-stack; }
+
+a {
+  transition: color 0.2s ease-in;
+  color: $primary-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: tint($primary-color, 35%);
+  }
+}
+
+@include respond-to('extra-large') {
+  html { font-size: 22px; }
+}

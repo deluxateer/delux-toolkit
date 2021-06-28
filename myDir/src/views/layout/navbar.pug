@@ -1,0 +1,29 @@
+//- -----------------------------------------------------------------------------
+//- This file contains all markup related to the navbar.
+//- -----------------------------------------------------------------------------
+
+include ../components/navigation
+
+//- Generates navlinks (li + a) excluding the logo's link
+//- @param {String} text - text for the link
+//- @param {String} url - URL that the link points to
+//- @param {String} activeNavbarItem - navbar item that is currently active
+mixin navbar-items(text, url, activeNavbarItem)
+  li
+    if activeNavbarItem && text.toLowerCase() === activeNavbarItem.toLowerCase()
+      span.navbar-link.navbar-link-active= text
+    else
+      a.navbar-link(href=url)= text
+
+//- Generates a generic navbar with hamburger menu and brand logo on mobile
+//- @param {Object} navbarItems - links to use for the navbar, excluding the logo
+//- @param {String} activeNavbarItem - navbar item that is currently active
+mixin navbar(navbarItems, activeNavbarItem)
+  nav.navbar
+    .mobile-nav-display
+      a.brand-logo(href='/') DeluxThreads
+      button.navbar-toggle(aria-label='Navigation Bar Toggle')
+        i.fas.fa-bars
+    ul.navbar-submenu
+      each value, key in navbarItems
+        +navbar-items(key, value, activeNavbarItem)

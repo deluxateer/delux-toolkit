@@ -1,0 +1,50 @@
+//- -----------------------------------------------------------------------------
+//- This file contains all markup related to the head tag of the site/application.
+//- -----------------------------------------------------------------------------
+
+//- Generates link tags for stylesheets based on the provided data
+//- @param {Array} styleSheetsData - array of simple style specifiying the href
+//- or an object with all the attributes to use
+mixin handleStyleSheets(styleSheetsData)
+  if styleSheetsData
+    each stylesheetData in styleSheetsData
+      if typeof stylesheetData === 'object'
+        link&attributes(stylesheetData)
+      else
+        link(rel='stylesheet' href=stylesheetData)
+
+//- Returns a head tag for each page with appropriate title tag, meta tags, link tags, etc.
+//- @param {Object} globalHeadProps - head properties that will appear on all webpages
+//- @param {Object} localHeadProps - head properties that will change from webpage to webpage.
+mixin head(globalHeadProps, localHeadProps)
+  - const { globalMeta, globalLink, googleAnalyticsCode, globalStylesheetPaths } = globalHeadProps;
+  //- In order to be usable, these need to be instantiated on the page that implements them.
+  - const { title, description, keywords, localStylesheetPaths } = localHeadProps;
+
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='IE=Edge')
+    if title
+      title #{title}
+    else
+      - throw 'Title (required) has not been provided.'
+    if description
+      meta(name='description' content=description)
+    else
+      - throw 'Description (required) has not been provided.'
+    if keywords
+      meta(name='keywords' content=keywords)
+    else
+      - throw 'Keywords (required) has not been provided.'
+    if googleAnalyticsCode
+      script #{googleAnalyticsCode}
+    if globalMeta
+      each metaTagContent, metaTagName in globalMeta
+        meta(name=metaTagName content=metaTagContent)
+    if globalLink
+      each linkTagAttributes, linkTagRel in globalLink
+        link(rel=linkTagRel)&attributes(linkTagAttributes)
+    block stylesheets
+      +handleStyleSheets(globalStylesheetPaths)
+      +handleStyleSheets(localStylesheetPaths)
