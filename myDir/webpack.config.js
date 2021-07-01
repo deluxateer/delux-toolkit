@@ -5,6 +5,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const { extendDefaultPlugins } = require('svgo');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -24,7 +26,7 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: 'js/[name].bundle.js',
     clean: true,
   },
   devServer: {
@@ -89,7 +91,36 @@ module.exports = () => {
     config.mode = 'production';
 
     config.plugins.push(
-      new MiniCssExtractPlugin({ filename: 'css/styles.min.css' })
+      new MiniCssExtractPlugin({ filename: 'css/styles.min.css' }),
+      new ImageMinimizerPlugin({
+        minimizerOptions: {
+          // Lossless optimization with custom option
+          // Feel free to experiment with options for better result for you
+          plugins: [
+            ['gifsicle', { interlaced: true }],
+            ['jpegtran', { progressive: true }],
+            ['optipng', { optimizationLevel: 5 }],
+            // Svgo configuration here https://github.com/svg/svgo#configuration
+            [
+              'svgo',
+              {
+                plugins: extendDefaultPlugins([
+                  {
+                    name: 'removeViewBox',
+                    active: false,
+                  },
+                  {
+                    name: 'addAttributesToSVGElement',
+                    params: {
+                      attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }],
+                    },
+                  },
+                ]),
+              },
+            ],
+          ],
+        },
+      })
     );
   } else {
     config.mode = 'development';
