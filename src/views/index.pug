@@ -14,13 +14,17 @@ block localVariables
       description: 'Landing page of the delux toolkit.',
       keywords: 'webdev, pug, scss, sass, js, deluxateer',
       //- paths of the stylesheets to use for this page
-      localStylesheetPaths: [],
+      localStylesheetPaths: [{
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.8.2/css/all.css',
+        integrity: 'sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay',
+        crossorigin: 'anonymous',
+      }],
     };
   -
     //- paths of javascript files to use for this page
     const scriptPaths = [
       //- 'js/vendor.js',
-      'js/bundle.js',
     ];
   
     //- class to put on body tag for custom styling
@@ -38,9 +42,5 @@ block localVariables
     }
 
 //- ---------------- MARKUP FOR PAGE ----------------
-
-prepend stylesheets
-  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
-
 block content
   +card(cardContent)

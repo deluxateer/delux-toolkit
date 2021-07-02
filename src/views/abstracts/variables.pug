@@ -1,7 +1,7 @@
 //- -----------------------------------------------------------------------------
 //- This file contains all application-wide Pug variables.
 //- -----------------------------------------------------------------------------
-
+block globalVariables
 //- global head configurations
 //- @prop {String} keys - meta tag name
 //- @prop {Object} values - meta tag content
@@ -17,25 +17,19 @@
     //-   'og:site_name': 'DeluxThreads',
     //-   'theme-color': '#000',
     //- },
-    //- globalLink: {
-    //-   'canonical': { href: 'https://deluxthreads.com' },
-    //-   'manifest': { href: './manifest.json' },
-    //-   // favicon
-    //-   'shortcut icon': {
-    //-     href: './favicon.ico',
-    //-     type: 'image/x-icon',
-    //-   },
-    //- },
+    globalLink: {
+      //- 'canonical': { href: 'https://deluxthreads.com' },
+      //- 'manifest': { href: './manifest.json' },
+    },
     //- googleAnalyticsCode: `(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='https://www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create','UA-XXXXX-X');ga('send','pageview');`,
     globalStylesheetPaths: [
-      'https://fonts.googleapis.com/css?family=Nunito',
-      'css/styles.min.css',
+      'https://fonts.googleapis.com/css?family=Nunito'
     ],
   };
 
 //- base url for assets (in dist)
 //- @type String
-- const baseURL = './';
+- const baseURL = '../';
 
 //- ***************** INSERT YOUR CUSTOM GLOBAL VARIABLES BELOW *****************
 

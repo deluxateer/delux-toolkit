@@ -57,9 +57,13 @@ $nav-link-hover-bg-color: color('gray', 'lighten-5');
     opacity: 1;
   }
 
-  li { text-align: center; }
+  li {
+    text-align: center;
+  }
 
-  li + li { margin-top: 1.3rem; }
+  li + li {
+    margin-top: 1.3rem;
+  }
 
   &-link {
     display: block;
@@ -71,15 +75,18 @@ $nav-link-hover-bg-color: color('gray', 'lighten-5');
 }
 
 @media screen and (min-width: 1200px) {
-
-  .mobile-nav-display { display: initial; }
+  .mobile-nav-display {
+    display: initial;
+  }
 
   .navbar {
     @include flex-space-between-children;
     padding: 2.6875rem 6%;
     margin: 0 auto;
 
-    &-toggle { display: none; }
+    &-toggle {
+      display: none;
+    }
 
     & &-active,
     &-submenu {
@@ -91,7 +98,9 @@ $nav-link-hover-bg-color: color('gray', 'lighten-5');
       opacity: 1;
     }
 
-    & &-active { margin-top: 0; }
+    & &-active {
+      margin-top: 0;
+    }
 
     &-link {
       background-color: $navbar-bgc;

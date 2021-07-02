@@ -19,17 +19,14 @@ mixin loop(count)
 //- @param {Object} options - optional options which are listed below
 //- @param {Boolean} lazyload [true] - if lazyloading is desired, it will use a data-attribute instead of src
 //- @param {String} classes [null] - classes for the image
-//- @param {String} base [baseURL] - base URL
-//- @require path, baseURL
+//- @require path
 mixin image(path, altText='', options={})
   -
-    const base = options.base || baseURL;
-    const fullPath = `${base}img/${path}`;
+    const srcPath = require('../assets/img/' + `${path}`)
     const lazyload = options.lazyload === false ? false : true;
     const classes = options.classes || null;
-  
   img(
-    src= lazyload ? null : fullPath
-    data-lazy= lazyload ? fullPath : null
+    src= lazyload ? null : srcPath
+    data-lazy= lazyload ? srcPath : null
     alt=altText
     class=classes)

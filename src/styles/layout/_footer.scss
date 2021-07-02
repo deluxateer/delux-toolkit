@@ -4,7 +4,7 @@
 
 footer {
   @include text-color-bgc(shade($primary-color, 20));
-  
+
   padding: 25px 0;
 
   a {
@@ -25,6 +25,7 @@ footer {
 .site-info {
   @include flex-space-between-children;
 
-  a { padding: 10px 0; }
+  a {
+    padding: 10px 0;
+  }
 }
-

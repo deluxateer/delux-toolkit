@@ -7,7 +7,7 @@ $carousel-width: 90% !default;
 $track-transition: transform 0.45s ease-in !default;
 $indicator-width: 15px !default;
 $indicator-height: 15px !default;
-$indicator-color: hsla(0, 0, 0, 0.3) !default;
+$indicator-color: hsla(0deg, 0%, 0%, 0.3%) !default;
 $indicator-color-current: opacify($indicator-color, 0.45) !default;
 
 .carousel {
@@ -52,14 +52,22 @@ $indicator-color-current: opacify($indicator-color, 0.45) !default;
   background: transparent;
   border: 0;
 
-  &-left { left: -30px; }
+  &-left {
+    left: -30px;
+  }
 
-  &-right { right: -30px; }
+  &-right {
+    right: -30px;
+  }
 
   @media screen and (min-width: breakpoint('medium')) {
-    &-left { left: -50px; }
+    &-left {
+      left: -50px;
+    }
 
-    &-right { right: -50px; }
+    &-right {
+      right: -50px;
+    }
   }
 }
 
@@ -77,5 +85,7 @@ $indicator-color-current: opacify($indicator-color, 0.45) !default;
   border-radius: 50%;
   margin: 0 10px;
 
-  &-current { background-color: $indicator-color-current; }
+  &-current {
+    background-color: $indicator-color-current;
+  }
 }

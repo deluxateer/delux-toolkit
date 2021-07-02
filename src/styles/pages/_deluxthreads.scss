@@ -15,17 +15,26 @@ h2 {
   margin-bottom: 1rem;
 }
 
-section { padding: 70px 0; }
+section {
+  padding: 70px 0;
+}
 
 // Hero Section
 .hero {
   height: 90vh;
-  background: linear-gradient(to bottom, rgba(color('gray', 'lighten-3'), 0.8), rgba(color('gray', 'lighten-3'), 0.9)), image('suits.jpg') no-repeat;
+  background: linear-gradient(
+      to bottom,
+      rgba(color('gray', 'lighten-3'), 0.8),
+      rgba(color('gray', 'lighten-3'), 0.9)
+    ),
+    image('suits.jpg') no-repeat;
   background-size: cover;
   padding: 0;
 }
 
-.lg-screen-img { display: none; }
+.lg-screen-img {
+  display: none;
+}
 
 .hero-info-container {
   @include flex-center-children;
@@ -37,7 +46,12 @@ section { padding: 70px 0; }
 
 .hero-info {
   h1 {
-    @include transition-setup((duration: 1s, timing-function: ease-in-out));
+    @include transition-setup(
+      (
+        duration: 1s,
+        timing-function: ease-in-out,
+      )
+    );
 
     transform: translateY(-250px);
     font-size: 3rem;
@@ -45,14 +59,24 @@ section { padding: 70px 0; }
   }
 
   p {
-    @include transition-setup((duration: 1s, timing-function: ease-in-out));
+    @include transition-setup(
+      (
+        duration: 1s,
+        timing-function: ease-in-out,
+      )
+    );
 
     transform: translateX(-250px);
     margin-bottom: 3rem;
   }
 
   a {
-    @include transition-setup((duration: 1s, timing-function: ease-in-out));
+    @include transition-setup(
+      (
+        duration: 1s,
+        timing-function: ease-in-out,
+      )
+    );
     @include button-color($secondary-color);
 
     transform: translateX(-250px);
@@ -66,7 +90,9 @@ section { padding: 70px 0; }
     display: flex;
     background: #fff;
 
-    > * { flex: 1 1; }
+    > * {
+      flex: 1 1;
+    }
 
     &-info {
       width: 82%;
@@ -82,16 +108,22 @@ section { padding: 70px 0; }
 }
 
 // About Section
-.about { background-color: color('gray', 'lighten-5'); }
+.about {
+  background-color: color('gray', 'lighten-5');
+}
 
 .about-info-container {
   @include flex-center-children;
   flex-direction: column;
-  
-  p + p { margin-top: 1rem; }
+
+  p + p {
+    margin-top: 1rem;
+  }
 }
 
-.about-info { width: 100%; }
+.about-info {
+  width: 100%;
+}
 
 .about-img {
   margin-top: 1rem;
@@ -107,10 +139,14 @@ section { padding: 70px 0; }
     display: flex;
     flex-direction: row-reverse;
 
-    > * { flex: 1 1; }
+    > * {
+      flex: 1 1;
+    }
   }
 
-  .about-info-container { padding: 0 4rem; }
+  .about-info-container {
+    padding: 0 4rem;
+  }
 
   .about-img {
     @include flex-center-children;
@@ -131,17 +167,25 @@ section { padding: 70px 0; }
     margin-bottom: 2rem;
   }
 
-  .card + .card { margin-top: 2rem; }
+  .card + .card {
+    margin-top: 2rem;
+  }
 }
 
 @include respond-to('min-medium') {
-  .about { padding-bottom: 250px; }
+  .about {
+    padding-bottom: 250px;
+  }
 
   .services {
-    .container { flex-direction: column-reverse; }
+    .container {
+      flex-direction: column-reverse;
+    }
 
-    h2 { margin: 4rem 0 0; }
-    
+    h2 {
+      margin: 4rem 0 0;
+    }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -149,7 +193,9 @@ section { padding: 70px 0; }
       margin-top: -180px;
     }
 
-    .card + .card { margin: 0; }
+    .card + .card {
+      margin: 0;
+    }
 
     .card {
       transform: translateY(0);
@@ -163,7 +209,9 @@ section { padding: 70px 0; }
 }
 
 // Testimonials Section
-.testimonials { padding-bottom: 95px; }
+.testimonials {
+  padding-bottom: 95px;
+}
 
 .testimonials h2 {
   text-align: center;
@@ -252,7 +300,9 @@ section { padding: 70px 0; }
 .testimonial-info {
   color: $text-color;
 
-  > * { margin-left: 2rem; }
+  > * {
+    margin-left: 2rem;
+  }
 }
 
 .testimonial-name {
@@ -266,7 +316,9 @@ section { padding: 70px 0; }
   @include text-color-bgc($primary-color);
 }
 
-.contact-form { margin-top: 3rem; }
+.contact-form {
+  margin-top: 3rem;
+}
 
 .contact-form button {
   @include button-color($secondary-color);
@@ -289,11 +341,17 @@ section { padding: 70px 0; }
   }
 
   .form-item {
-    &.form-name { grid-area: name; }
+    &.form-name {
+      grid-area: name;
+    }
 
-    &.form-email { grid-area: email; }
-    
-    &.form-message { grid-area: message; }
+    &.form-email {
+      grid-area: email;
+    }
+
+    &.form-message {
+      grid-area: message;
+    }
 
     input,
     textarea {

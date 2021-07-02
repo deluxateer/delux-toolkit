@@ -2,11 +2,17 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
-body { color: $text-color; }
+body {
+  color: $text-color;
+}
 
-code { font-family: $code-font-stack; }
+code {
+  font-family: $code-font-stack;
+}
 
 a {
   transition: color 0.2s ease-in;
@@ -19,5 +25,7 @@ a {
 }
 
 @include respond-to('extra-large') {
-  html { font-size: 22px; }
+  html {
+    font-size: 22px;
+  }
 }

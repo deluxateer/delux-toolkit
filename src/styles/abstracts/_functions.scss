@@ -24,7 +24,7 @@
 /// @param {Color} $bgc - background color
 /// @param {Color} $on-light [#000] - text color to use for light backgrounds
 /// @param {Color} $on-dark [#fff] - text color to use for dark backgrounds
-/// @param {Number} $threshold [50] - percentage where color changes should occur around 
+/// @param {Number} $threshold [50] - percentage where color changes should occur around
 /// @return {Color}
 /// @author Deluxateer
 @function contrast-text($bgc, $on-light: #000, $on-dark: #fff, $threshold: 50) {
@@ -72,4 +72,3 @@
 @function breakpoint($desired-breakpoint) {
   @return map-get($breakpoints, $desired-breakpoint);
 }
-
