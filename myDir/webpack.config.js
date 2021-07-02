@@ -4,6 +4,7 @@ const path = require('path');
 // PLUGINS
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const { extendDefaultPlugins } = require('svgo');
@@ -37,6 +38,7 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin(HTMLFileOptions('index')),
     new HtmlWebpackPlugin(HTMLFileOptions('deluxthreads')),
+    new StylelintPlugin(),
     new ESLintPlugin(),
 
     // Add your plugins here

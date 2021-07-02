@@ -82,18 +82,20 @@
 /// Add rules to initialize an element for animation
 /// @author Deluxateer
 /// @param {List} $transition-options - specify transition duration and timing function
-//  
+//
 //  Example:
 //  $transition-options: (
 //     'duration': 1s,
 //     'timing-function': ease-in-out,
 //  );
-// 
+//
 @mixin transition-setup($transition-options) {
-  transition:
-    opacity map-get($transition-options, 'duration') map-get($transition-options, 'timing-function'),
-    visibility map-get($transition-options, 'duration') map-get($transition-options, 'timing-function'),
-    transform map-get($transition-options, 'duration') map-get($transition-options, 'timing-function');
+  transition: opacity map-get($transition-options, 'duration')
+      map-get($transition-options, 'timing-function'),
+    visibility map-get($transition-options, 'duration')
+      map-get($transition-options, 'timing-function'),
+    transform map-get($transition-options, 'duration')
+      map-get($transition-options, 'timing-function');
   visibility: hidden;
   opacity: 0;
 }

@@ -19,13 +19,21 @@ $btn-bgc-default: hsl(0, 0%, 34%);
   @include text-color-bgc($bgc);
 
   @if $btn-border != false {
-    border-color: call(get-function(nth($btn-border, 1)), $bgc, nth($btn-border, 2));
+    border-color: call(
+      get-function(nth($btn-border, 1)),
+      $bgc,
+      nth($btn-border, 2)
+    );
   }
 
   &:hover,
   &:focus {
     color: contrast-text($bgc);
-    background: call(get-function(nth($btn-hover, 1)), $bgc, nth($btn-hover, 2));
+    background: call(
+      get-function(nth($btn-hover, 1)),
+      $bgc,
+      nth($btn-hover, 2)
+    );
   }
 
   &:active {
@@ -37,7 +45,7 @@ $btn-bgc-default: hsl(0, 0%, 34%);
 %#{btn-name} {
   // default styles
   @include button-color($btn-bgc-default);
-  
+
   display: inline-block;
   transition: background-color 0.15s ease-in;
   font-size: 1rem;
@@ -64,11 +72,17 @@ $btn-bgc-default: hsl(0, 0%, 34%);
     padding: 0.5rem;
   }
 
-  &-bold { font-weight: bold; }
+  &-bold {
+    font-weight: bold;
+  }
 
-  &-upper { text-transform: uppercase; }
+  &-upper {
+    text-transform: uppercase;
+  }
 
-  &-round { border-radius: 20px; }
+  &-round {
+    border-radius: 20px;
+  }
 
   &-block {
     display: block;
@@ -76,7 +90,8 @@ $btn-bgc-default: hsl(0, 0%, 34%);
   }
 
   &-shadow {
-    box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.19), 0 6px 6px hsla(0, 0%, 0%, 0.23);
+    box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.19),
+      0 6px 6px hsla(0, 0%, 0%, 0.23);
   }
 }
 
@@ -97,9 +112,13 @@ $btn-bgc-default: hsl(0, 0%, 34%);
   margin: 0;
 }
 
-.btn-enter { animation: enter 0.5s both; }
+.btn-enter {
+  animation: enter 0.5s both;
+}
 
-.btn-exit { animation: exit 0.5s both; }
+.btn-exit {
+  animation: exit 0.5s both;
+}
 
 @keyframes enter {
   from {
@@ -118,7 +137,7 @@ $btn-bgc-default: hsl(0, 0%, 34%);
     transform: translate3d(0, 0, 0);
     opacity: 1;
   }
-  
+
   to {
     transform: translate3d(0, 100%, 0);
     opacity: 0;
