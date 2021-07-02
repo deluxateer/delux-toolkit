@@ -5,6 +5,7 @@ const path = require('path');
 // PLUGINS
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PugLintPlugin = require('puglint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
@@ -40,6 +41,10 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin(HTMLFileOptions('index')),
     new HtmlWebpackPlugin(HTMLFileOptions('deluxthreads')),
+    new PugLintPlugin({
+      files: '**/*.pug',
+      config: Object.assign({ emitError: true }, require('./.pug-lintrc.json')),
+    }),
     new StylelintPlugin(),
     new ESLintPlugin(),
 
