@@ -1,6 +1,7 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require('path');
+
 // PLUGINS
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -11,7 +12,7 @@ const { extendDefaultPlugins } = require('svgo');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
-const HTMLFileOptions = (fileName) => ({
+const HTMLFileOptions = fileName => ({
   filename: `${fileName}.html`,
   template: `./views/${fileName}.pug`,
   chunks: [`${fileName}`],
@@ -30,6 +31,7 @@ const config = {
     filename: 'js/[name].bundle.js',
     clean: true,
   },
+  target: 'web',
   devServer: {
     open: true,
     host: 'localhost',

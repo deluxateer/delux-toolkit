@@ -2,7 +2,9 @@ const navSubMenu = document.querySelector('.navbar-submenu');
 const navbarBtn = document.querySelector('.navbar-toggle');
 
 if (navSubMenu && navbarBtn) {
-  navbarBtn.addEventListener('click', () => navSubMenu.classList.toggle('navbar-active'));
+  navbarBtn.addEventListener('click', () =>
+    navSubMenu.classList.toggle('navbar-active')
+  );
 }
 
 // intended to disable navbar collapse animation on resize

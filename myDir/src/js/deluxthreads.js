@@ -13,7 +13,7 @@ import './base/transition';
 // set carousel height to be the height of the largest testimonial card plus 2rem
 const carousel = document.querySelector('.testimonials .carousel');
 const slides = Array.from(document.querySelectorAll('.testimonial-card'));
-const slideHeights = slides.map((slide) => slide.offsetHeight);
+const slideHeights = slides.map(slide => slide.offsetHeight);
 const largestHeight = Math.max(...slideHeights);
 
 carousel.style.height = `${largestHeight + 80}px`;
@@ -29,7 +29,7 @@ confirmEl.style.cssText =
 
 form.parentNode.insertBefore(confirmEl, form);
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', e => {
   e.preventDefault();
   form.reset();
 
