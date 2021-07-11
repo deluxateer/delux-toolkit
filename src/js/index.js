@@ -1,8 +1,6 @@
-import './layout/navbar';
+// Styles
+import '../styles/index.scss';
 
-import './components/button';
-import './components/form';
-import './components/carousel';
-
+// JS
 import './base/lazy-load';
 import './base/transition';

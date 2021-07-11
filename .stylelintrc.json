@@ -1,72 +1,72 @@
 {
-  "extends": "stylelint-config-sass-guidelines",
+  "extends": ["stylelint-config-sass-guidelines", "stylelint-config-prettier"],
   "rules": {
     "function-comma-space-before": "never",
-    "max-nesting-depth": [2, {
-      "ignore": ["pseudo-classes"]
-    }],
-    "selector-no-qualifying-type": [true, {
-      "ignore": ["attribute"]
-    }],
+    "max-nesting-depth": [
+      2,
+      {
+        "ignore": ["pseudo-classes"]
+      }
+    ],
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute"]
+      }
+    ],
     "order/properties-alphabetical-order": null,
     "order/order": [
       "custom-properties",
       "dollar-variables",
       {
-	      type: "at-rule",
-	      hasBlock: false
+        "type": "at-rule",
+        "hasBlock": false
       },
       "declarations",
-            {
-	      type: "at-rule",
-	      name: "if"
+      {
+        "type": "at-rule",
+        "name": "if"
       },
       {
-	      type: "at-rule",
-	      name: "else"
+        "type": "at-rule",
+        "name": "else"
       },
       {
-	      type: "at-rule",
-	      name: "each"
+        "type": "at-rule",
+        "name": "each"
       },
       "rules",
       {
-	      type: "at-rule",
-	      hasBlock: true
+        "type": "at-rule",
+        "hasBlock": true
       }
     ],
     "order/properties-order": [
       {
-        groupName: "breaks",
-        properties: [
+        "groupName": "breaks",
+        "properties": [
           "page-break-before",
           "page-break-after",
           "page-break-inside"
         ],
-        order: "flexible"
+        "order": "flexible"
       },
       {
-        groupName: "counters",
-        properties: [
-          "counter-reset",
-          "counter-increment"
-        ],
-        order: "flexible"
+        "groupName": "counters",
+        "properties": ["counter-reset", "counter-increment"],
+        "order": "flexible"
       },
       {
-        groupName: "content",
-        properties: [
-          "contents",
-          "quotes"
-        ]
+        "groupName": "content",
+        "properties": ["contents", "quotes"]
       },
       {
-        groupName: "box-sizing",
-        properties: ["box-sizing"]
+        "groupName": "box-sizing",
+        "properties": ["box-sizing"]
       },
       {
-        groupName: "position",
-        properties: [
+        "groupName": "position",
+        "properties": [
           "display",
           "position",
           "top",
@@ -78,8 +78,8 @@
         ]
       },
       {
-        groupName: "flex",
-        properties: [
+        "groupName": "flex",
+        "properties": [
           "flex",
           "flex-basis",
           "flex-direction",
@@ -91,20 +91,16 @@
         ]
       },
       {
-        groupName: "align-content",
-        properties: [
-          "align-content",
-          "align-items",
-          "align-self"
-        ]
+        "groupName": "align-content",
+        "properties": ["align-content", "align-items", "align-self"]
       },
       {
-        groupName: "order",
-        properties: ["order"]
+        "groupName": "order",
+        "properties": ["order"]
       },
       {
-        groupName: "columns",
-        properties: [
+        "groupName": "columns",
+        "properties": [
           "columns",
           "column-gap",
           "column-fill",
@@ -118,8 +114,8 @@
         ]
       },
       {
-        groupName: "transform",
-        properties: [
+        "groupName": "transform",
+        "properties": [
           "backface-visibility",
           "perspective",
           "perspective-origin:",
@@ -129,8 +125,8 @@
         ]
       },
       {
-        groupName: "transitions",
-        properties: [
+        "groupName": "transitions",
+        "properties": [
           "transition",
           "transition-delay",
           "transition-duration",
@@ -139,16 +135,12 @@
         ]
       },
       {
-        groupName: "visibility",
-        properties: [
-          "visibility",
-          "opacity",
-          "z-index"
-        ]
+        "groupName": "visibility",
+        "properties": ["visibility", "opacity", "z-index"]
       },
       {
-        groupName: "font",
-        properties: [
+        "groupName": "font",
+        "properties": [
           "font",
           "font-family",
           "font-size",
@@ -162,8 +154,8 @@
         ]
       },
       {
-        groupName: "text-spacing",
-        properties: [
+        "groupName": "text-spacing",
+        "properties": [
           "line-height",
           "word-spacing",
           "letter-spacing",
@@ -174,8 +166,8 @@
         ]
       },
       {
-        groupName: "text-alignment & decoration",
-        properties: [
+        "groupName": "text-alignment & decoration",
+        "properties": [
           "direction",
           "tab-size",
           "text-align",
@@ -193,12 +185,12 @@
         ]
       },
       {
-        groupName: "vertical-align",
-        properties: ["vertical-align"]
+        "groupName": "vertical-align",
+        "properties": ["vertical-align"]
       },
       {
-        groupName: "tables",
-        properties: [
+        "groupName": "tables",
+        "properties": [
           "table-layout",
           "border-collapse",
           "border-spacing",
@@ -206,8 +198,8 @@
         ]
       },
       {
-        groupName: "list-style",
-        properties: [
+        "groupName": "list-style",
+        "properties": [
           "list-style",
           "list-style-type",
           "list-style-position",
@@ -216,37 +208,24 @@
         ]
       },
       {
-        groupName: "overflow",
-        properties: [
-          "overflow",
-          "overflow-x",
-          "overflow-y",
-          "resize"
-        ]
+        "groupName": "overflow",
+        "properties": ["overflow", "overflow-x", "overflow-y", "resize"]
       },
       {
-        groupName: "width",
-        properties: [
-          "width",
-          "min-width",
-          "max-width"
-        ]
+        "groupName": "width",
+        "properties": ["width", "min-width", "max-width"]
       },
       {
-        groupName: "height",
-        properties: [
-          "height",
-          "min-height",
-          "max-height"
-        ]
+        "groupName": "height",
+        "properties": ["height", "min-height", "max-height"]
       },
       {
-        groupName: "cursor",
-        properties: ["cursor"]
+        "groupName": "cursor",
+        "properties": ["cursor"]
       },
       {
-        groupName: "background",
-        properties: [
+        "groupName": "background",
+        "properties": [
           "background",
           "background-attachment",
           "background-clip",
@@ -259,8 +238,8 @@
         ]
       },
       {
-        groupName: "padding",
-        properties: [
+        "groupName": "padding",
+        "properties": [
           "padding",
           "padding-top",
           "padding-right",
@@ -269,8 +248,8 @@
         ]
       },
       {
-        groupName: "border",
-        properties: [
+        "groupName": "border",
+        "properties": [
           "border",
           "border-top",
           "border-right",
@@ -284,8 +263,8 @@
         ]
       },
       {
-        groupName: "border-style",
-        properties: [
+        "groupName": "border-style",
+        "properties": [
           "border-style",
           "border-top-style",
           "border-right-style",
@@ -294,8 +273,8 @@
         ]
       },
       {
-        groupName: "border-radius",
-        properties: [
+        "groupName": "border-radius",
+        "properties": [
           "border-radius",
           "border-top-left-radius",
           "border-top-right-radius",
@@ -304,8 +283,8 @@
         ]
       },
       {
-        groupName: "border-color",
-        properties: [
+        "groupName": "border-color",
+        "properties": [
           "border-color",
           "border-top-color",
           "border-right-color",
@@ -314,8 +293,8 @@
         ]
       },
       {
-        groupName: "border-image",
-        properties: [
+        "groupName": "border-image",
+        "properties": [
           "border-image",
           "border-image-source",
           "border-image-width",
@@ -325,12 +304,12 @@
         ]
       },
       {
-        groupName: "box-shadow",
-        properties: ["box-shadow"]
+        "groupName": "box-shadow",
+        "properties": ["box-shadow"]
       },
       {
-        groupName: "outline",
-        properties: [
+        "groupName": "outline",
+        "properties": [
           "outline",
           "outline-offset",
           "outline-width",
@@ -339,8 +318,8 @@
         ]
       },
       {
-        groupName: "margin",
-        properties: [
+        "groupName": "margin",
+        "properties": [
           "margin",
           "margin-top",
           "margin-right",
@@ -349,8 +328,8 @@
         ]
       },
       {
-        groupName: "animation",
-        properties: [
+        "groupName": "animation",
+        "properties": [
           "animation",
           "animation-name",
           "animation-duration",
