@@ -2,6 +2,8 @@
 import '../styles/index.scss';
 
 // JS
+import './layout/navbar';
+
 import './components/button';
 import './components/form';
 import './components/carousel';
